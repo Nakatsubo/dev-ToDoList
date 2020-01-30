@@ -366,7 +366,7 @@ const app = new Vue({
       // 配列.reduce(コールバック関数, [初期値]) => 各要素を左から右に処理して単一の値を生成する
       return this.options.reduce(function(a, b) {
         // Object.assign(target, ...source) => sourceを参照して、targetに値をコピーまたマージする
-        return Object.assign(a, { [b.label] : b.label })
+        return Object.assign(a, { [b.value] : b.label })
       }, {})
     }
   },
