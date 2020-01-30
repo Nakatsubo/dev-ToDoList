@@ -54,6 +54,7 @@ const app = new Vue({
 
 ```
 // https://jp.vuejs.org/v2/examples/todomvc.html
+
 var STORAGE_KEY = 'todos-vuejs-demo'
 var todoStorage = {
   fetch: function() {
@@ -93,7 +94,7 @@ var todoStorage = {
 </div>
 ```
 
-### Phase3 リストデータ用の配列を作成
+### Phase4 リストデータ用の配列を作成
 
 #### index.html
 
@@ -170,6 +171,99 @@ const app = new Vue({
         state: 0
       })
       comment.value = ''
+    }
+  }
+})
+```
+
+### Phase7 ストレージへ自動保存化
+
+#### main.js
+
+```
+const app = new Vue({
+  :<snip>
+  watch: {
+    todos: {
+      handler: function(todos) {
+        // saveメソッドで保存
+        todoStorage.save(todos)
+      },
+      // ネストしたオブジェクトも監視する
+      deep: true
+    }
+  },
+  :<snip>
+})
+```
+
+### Phase8 保存されたリストを取得
+
+#### main.js
+
+```
+const app = new Vue({
+  :<snip>
+  created: function() {
+    // fetchメソッドで取得
+    this.todos = todoStorage.fetch()
+  },
+  :<snip>
+})
+```
+
+### Phase9 リストの状態の変更
+
+#### index.html
+
+```
+:<snip>
+<td class="state">
+  <button v-on:click="doChangeState(item)">{{ item.state }}</button>
+</td>
+:<snip>
+```
+
+#### main.js
+
+```
+const app = new Vue({
+  :<snip>
+  methods: {
+    :<snip>
+    doChangeState: function(item) {
+      item.state ? 0 : 1
+    }
+  }
+})
+```
+
+### Phase10 リストから削除
+
+#### index.html
+
+```
+:<snip>
+<td class="button">
+  <!-- altキーを押しながら削除 -->
+  <button v-on:click.alt="doRemove(item)">削除</button>
+</td>
+:<snip>
+```
+
+#### main.js
+
+```
+const app = new Vue({
+  :<snip>
+  methods: {
+    :<snip>
+    doRemove: function(item) {
+      // 文字列.indexOf('文字列') => 文字列からある文字列を検索する。戻り値は数値
+      let index = this.todos.indexOf(item)
+      console.log(index) // => 指定位置のインデックス番号を返す
+      // 配列.splice(指定位置, 取り出す数) => 配列から要素の一部を置き換える
+      this.todos.splice(index, 1)
     }
   }
 })
