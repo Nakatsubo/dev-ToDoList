@@ -7,25 +7,43 @@ https://bit.ly/31826CY
 
 ## インデックス
 
+- <a href="">Phase1 インスタンスを作成</a>
+- <a href="">Phase2 ローカルストレージを作成</a>
+- <a href="">Phase3 リストデータ用のHTMLを作成</a>
+- <a href="">Phase4 リストデータ用の配列を作成</a>
+- <a href="">Phase5 フォームの値を取得</a>
+- <a href="">Phase6 フォームの値をリストに追加</a>
+- <a href="">Phase7 ストレージへリストを自動保存化</a>
+- <a href="">Phase8 保存されたリストをストレージから取得</a>
+- <a href="">Phase9 リストの状態の変更</a>
+- <a href="">Phase10 リストから削除</a>
+- <a href="">Phase11 選択フォームを作成</a>
+- <a href="">Phase12 絞り込み機能を作成</a>
+- <a href="">Phase13 文字列の変換機能を作成</a>
+- <a href="">完成</a>
+
 
 ## 環境
 - Vue.js v2.5.16
 
 
 ## 構成
+
+```
 .
 ├── README.md
 ├── index.html
 ├── main.css
 └── main.js
+```
 
 ```
 $ tree -L 1
 ```
 
-### Phase1 インスタンスを作成
+## Phase1 インスタンスを作成
 
-#### index.html
+### index.html
 
 ```
 <body>
@@ -34,7 +52,7 @@ $ tree -L 1
 </body>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -46,11 +64,11 @@ const app = new Vue({
 })
 ```
 
-### Phase2 ローカルストレージを作成
+## Phase2 ローカルストレージを作成
 参考サイト<br>
 <a href="http://www.htmq.com/webstorage/" target="_blank" rel="noopener">Web Storage API</a>
 
-#### main.js
+### main.js
 
 ```
 // https://jp.vuejs.org/v2/examples/todomvc.html
@@ -73,9 +91,9 @@ var todoStorage = {
 }
 ```
 
-### Phase3 リストデータ用のHTMLを作成
+## Phase3 リストデータ用のHTMLを作成
 
-#### index.html
+### index.html
 
 ```
 <div id="app">
@@ -94,9 +112,9 @@ var todoStorage = {
 </div>
 ```
 
-### Phase4 リストデータ用の配列を作成
+## Phase4 リストデータ用の配列を作成
 
-#### index.html
+### index.html
 
 ```
 <div id="app">
@@ -125,7 +143,7 @@ var todoStorage = {
 </div>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -138,9 +156,9 @@ const app = new Vue({
 })
 ```
 
-### Phase5 フォームの値を取得
+## Phase5 フォームの値を取得
 
-#### index.html
+### index.html
 
 ```
 :<snip>
@@ -152,9 +170,9 @@ const app = new Vue({
 :<snip>
 ```
 
-### Phase6 フォームの値をリストに追加
+## Phase6 フォームの値をリストに追加
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -176,9 +194,9 @@ const app = new Vue({
 })
 ```
 
-### Phase7 ストレージへ自動保存化
+## Phase7 ストレージへリストを自動保存化
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -197,9 +215,9 @@ const app = new Vue({
 })
 ```
 
-### Phase8 保存されたリストを取得
+## Phase8 保存されたリストをストレージから取得
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -212,9 +230,9 @@ const app = new Vue({
 })
 ```
 
-### Phase9 リストの状態の変更
+## Phase9 リストの状態の変更
 
-#### index.html
+### index.html
 
 ```
 :<snip>
@@ -224,7 +242,7 @@ const app = new Vue({
 :<snip>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -238,9 +256,9 @@ const app = new Vue({
 })
 ```
 
-### Phase10 リストから削除
+## Phase10 リストから削除
 
-#### index.html
+### index.html
 
 ```
 :<snip>
@@ -251,7 +269,7 @@ const app = new Vue({
 <p>※削除ボタンはaltキーを押しながらクリックして下さい</p>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -269,9 +287,9 @@ const app = new Vue({
 })
 ```
 
-### Phase11 選択フォームの作成
+## Phase11 選択フォームを作成
 
-#### index.html
+### index.html
 
 ```
 <label v-for="item in options">
@@ -280,7 +298,7 @@ const app = new Vue({
 </label>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -299,9 +317,9 @@ const app = new Vue({
 })
 ```
 
-### Phase12 絞り込み機能の作成
+## Phase12 絞り込み機能を作成
 
-#### index.html
+### index.html
 
 ```
 （{{ computedTodos.length }} 件を表示）
@@ -310,7 +328,7 @@ const app = new Vue({
 <tr v-for="item in computedTodos" v-bind:key="item.id">
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -327,9 +345,9 @@ const app = new Vue({
 })
 ```
 
-### Phase13 文字列の変換機能の作成
+## Phase13 文字列の変換機能を作成
 
-#### index.html
+### index.html
 
 ```
 <td class="{done:item.state}">
@@ -337,7 +355,7 @@ const app = new Vue({
 </td>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -356,9 +374,9 @@ const app = new Vue({
 })
 ```
 
-### 完成
+## 完成
 
-#### index.html
+### index.html
 
 ```
 <!DOCTYPE html>
@@ -415,7 +433,7 @@ const app = new Vue({
 </html>
 ```
 
-#### main.js
+### main.js
 
 ```
 // https://jp.vuejs.org/v2/examples/todomvc.html
@@ -501,7 +519,7 @@ const app = new Vue({
 })
 ```
 
-#### main.css
+### main.css
 
 ```
 * {
