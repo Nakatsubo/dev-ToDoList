@@ -7,25 +7,43 @@ https://bit.ly/31826CY
 
 ## インデックス
 
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase1-%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%82%92%E4%BD%9C%E6%88%90">Phase1 インスタンスを作成</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase2-%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%9C%E6%88%90">Phase2 ローカルストレージを作成</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase3-%E3%83%AA%E3%82%B9%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E7%94%A8%E3%81%AEhtml%E3%82%92%E4%BD%9C%E6%88%90">Phase3 リストデータ用のHTMLを作成</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase4-%E3%83%AA%E3%82%B9%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E7%94%A8%E3%81%AE%E9%85%8D%E5%88%97%E3%82%92%E4%BD%9C%E6%88%90">Phase4 リストデータ用の配列を作成</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase5-%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%80%A4%E3%82%92%E5%8F%96%E5%BE%97">Phase5 フォームの値を取得</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase6-%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%80%A4%E3%82%92%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AB%E8%BF%BD%E5%8A%A0">Phase6 フォームの値をリストに追加</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase7-%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8%E3%81%B8%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E8%87%AA%E5%8B%95%E4%BF%9D%E5%AD%98%E5%8C%96">Phase7 ストレージへリストを自動保存化</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase8-%E4%BF%9D%E5%AD%98%E3%81%95%E3%82%8C%E3%81%9F%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B8%E3%81%8B%E3%82%89%E5%8F%96%E5%BE%97">Phase8 保存されたリストをストレージから取得</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase9-%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AE%E7%8A%B6%E6%85%8B%E3%81%AE%E5%A4%89%E6%9B%B4">Phase9 リストの状態の変更</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase10-%E3%83%AA%E3%82%B9%E3%83%88%E3%81%8B%E3%82%89%E5%89%8A%E9%99%A4">Phase10 リストから削除</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase11-%E9%81%B8%E6%8A%9E%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%92%E4%BD%9C%E6%88%90">Phase11 選択フォームを作成</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase12-%E7%B5%9E%E3%82%8A%E8%BE%BC%E3%81%BF%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%9C%E6%88%90">Phase12 絞り込み機能を作成</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList#phase13-%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E5%A4%89%E6%8F%9B%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%9C%E6%88%90">Phase13 文字列の変換機能を作成</a>
+- <a href="https://github.com/NakatsuboYusuke/dev-ToDoList/tree/develop#%E5%AE%8C%E6%88%90">完成</a>
+
 
 ## 環境
 - Vue.js v2.5.16
 
 
 ## 構成
+
+```
 .
 ├── README.md
 ├── index.html
 ├── main.css
 └── main.js
+```
 
 ```
 $ tree -L 1
 ```
 
-### Phase1 インスタンスを作成
+## Phase1 インスタンスを作成
 
-#### index.html
+### index.html
 
 ```
 <body>
@@ -34,7 +52,7 @@ $ tree -L 1
 </body>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -46,11 +64,11 @@ const app = new Vue({
 })
 ```
 
-### Phase2 ローカルストレージを作成
+## Phase2 ローカルストレージを作成
 参考サイト<br>
 <a href="http://www.htmq.com/webstorage/" target="_blank" rel="noopener">Web Storage API</a>
 
-#### main.js
+### main.js
 
 ```
 // https://jp.vuejs.org/v2/examples/todomvc.html
@@ -73,9 +91,9 @@ var todoStorage = {
 }
 ```
 
-### Phase3 リストデータ用のHTMLを作成
+## Phase3 リストデータ用のHTMLを作成
 
-#### index.html
+### index.html
 
 ```
 <div id="app">
@@ -94,9 +112,9 @@ var todoStorage = {
 </div>
 ```
 
-### Phase4 リストデータ用の配列を作成
+## Phase4 リストデータ用の配列を作成
 
-#### index.html
+### index.html
 
 ```
 <div id="app">
@@ -125,7 +143,7 @@ var todoStorage = {
 </div>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -138,9 +156,9 @@ const app = new Vue({
 })
 ```
 
-### Phase5 フォームの値を取得
+## Phase5 フォームの値を取得
 
-#### index.html
+### index.html
 
 ```
 :<snip>
@@ -152,9 +170,9 @@ const app = new Vue({
 :<snip>
 ```
 
-### Phase6 フォームの値をリストに追加
+## Phase6 フォームの値をリストに追加
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -176,9 +194,9 @@ const app = new Vue({
 })
 ```
 
-### Phase7 ストレージへ自動保存化
+## Phase7 ストレージへリストを自動保存化
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -197,9 +215,9 @@ const app = new Vue({
 })
 ```
 
-### Phase8 保存されたリストを取得
+## Phase8 保存されたリストをストレージから取得
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -212,9 +230,9 @@ const app = new Vue({
 })
 ```
 
-### Phase9 リストの状態の変更
+## Phase9 リストの状態の変更
 
-#### index.html
+### index.html
 
 ```
 :<snip>
@@ -224,7 +242,7 @@ const app = new Vue({
 :<snip>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -238,9 +256,9 @@ const app = new Vue({
 })
 ```
 
-### Phase10 リストから削除
+## Phase10 リストから削除
 
-#### index.html
+### index.html
 
 ```
 :<snip>
@@ -251,7 +269,7 @@ const app = new Vue({
 <p>※削除ボタンはaltキーを押しながらクリックして下さい</p>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -269,9 +287,9 @@ const app = new Vue({
 })
 ```
 
-### Phase11 選択フォームの作成
+## Phase11 選択フォームを作成
 
-#### index.html
+### index.html
 
 ```
 <label v-for="item in options">
@@ -280,7 +298,7 @@ const app = new Vue({
 </label>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -299,9 +317,9 @@ const app = new Vue({
 })
 ```
 
-### Phase12 絞り込み機能の作成
+## Phase12 絞り込み機能を作成
 
-#### index.html
+### index.html
 
 ```
 （{{ computedTodos.length }} 件を表示）
@@ -310,7 +328,7 @@ const app = new Vue({
 <tr v-for="item in computedTodos" v-bind:key="item.id">
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -327,9 +345,9 @@ const app = new Vue({
 })
 ```
 
-### Phase13 文字列の変換機能の作成
+## Phase13 文字列の変換機能を作成
 
-#### index.html
+### index.html
 
 ```
 <td class="{done:item.state}">
@@ -337,7 +355,7 @@ const app = new Vue({
 </td>
 ```
 
-#### main.js
+### main.js
 
 ```
 const app = new Vue({
@@ -356,9 +374,9 @@ const app = new Vue({
 })
 ```
 
-### 完成
+## 完成
 
-#### index.html
+### index.html
 
 ```
 <!DOCTYPE html>
@@ -415,7 +433,7 @@ const app = new Vue({
 </html>
 ```
 
-#### main.js
+### main.js
 
 ```
 // https://jp.vuejs.org/v2/examples/todomvc.html
@@ -501,7 +519,7 @@ const app = new Vue({
 })
 ```
 
-#### main.css
+### main.css
 
 ```
 * {
