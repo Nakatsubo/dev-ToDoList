@@ -21,7 +21,22 @@ var todoStorage = {
 const app = new Vue({
   el: '#app',
   data: {
-    todos: []
+    todos: [],
+    options: [
+      { value: -1, label: 'すべて' },
+      { value: 0, label: '作業中' },
+      { value: 1, label: '完了' }
+    ],
+    // 初期値
+    current: -1
+  },
+  computed: {
+    computedTodos: function() {
+      // 配列.filter(コールバック関数) => コールバック関数に合格した配列を生成して返す
+      return this.todos.filter(function(element) {
+        return this.current < 0 ? true : this.current === element.state
+      }, this)
+    }
   },
   watch: {
     todos: {
@@ -51,7 +66,7 @@ const app = new Vue({
       comment.value = ''
     },
     doChangeState: function(item) {
-      item.state ? 0 : 1
+      item.state = item.state ? 0 : 1
     },
     doRemove: function(item) {
       // 文字列.indexOf('文字列') => 文字列からある文字列を検索する

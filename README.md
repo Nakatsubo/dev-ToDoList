@@ -9,7 +9,7 @@ https://bit.ly/31826CY
 
 
 ## 環境
-- Vue.js
+- Vue.js v2.5.16
 
 
 ## 構成
@@ -232,7 +232,7 @@ const app = new Vue({
   methods: {
     :<snip>
     doChangeState: function(item) {
-      item.state ? 0 : 1
+      item.state = item.state ? 0 : 1
     }
   }
 })
@@ -245,10 +245,10 @@ const app = new Vue({
 ```
 :<snip>
 <td class="button">
-  <!-- altキーを押しながら削除 -->
   <button v-on:click.alt="doRemove(item)">削除</button>
 </td>
 :<snip>
+<p>※削除ボタンはaltキーを押しながらクリックして下さい</p>
 ```
 
 #### main.js
@@ -266,5 +266,63 @@ const app = new Vue({
       this.todos.splice(index, 1)
     }
   }
+})
+```
+
+### Phase11 選択フォームの作成
+
+#### index.html
+
+```
+<label v-for="item in options">
+  // v-model ディレクティブの値には、ユーザーの入力と同期させたいデータを指定する
+  <input type="radio" v-model="current" v-bind:value="item.value">{{ item.label }}
+</label>
+```
+
+#### main.js
+
+```
+const app = new Vue({
+  :<snip>
+  data: {
+    todos: [],
+    options: [
+      { value: -1, label: 'すべて' },
+      { value: 0, label: '作業中' },
+      { value: 1, label: '完了' }
+    ],
+    // 初期値
+    current: -1
+  },
+  :<snip>
+})
+```
+
+### Phase12 絞り込み機能の作成
+
+#### index.html
+
+```
+（{{ computedTodos.length }} 件を表示）
+:<snip>
+<!-- <tr v-for="item in todos" v-bind:key="item.id"> -->
+<tr v-for="item in computedTodos" v-bind:key="item.id">
+```
+
+#### main.js
+
+```
+const app = new Vue({
+  :<snip>
+  computed: {
+    computedTodos: function() {
+      // 配列.filter(コールバック関数) => コールバック関数に合格した配列を生成して返す
+      return this.todos.filter(function(element) {
+        return this.current < 0 ? true : this.current === element.state
+      }, this)
+    }
+  },
+  :<snip>
 })
 ```

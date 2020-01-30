@@ -7,6 +7,13 @@
 </head>
 <body>
   <div id="app">
+    <h1>ToDoList</h1>
+
+    <label v-for="item in options">
+      <input type="radio" v-model="current" v-bind:value="item.value">{{ item.label }}
+    </label>
+
+    （{{ computedTodos.length }} 件を表示）
 
     <table>
       <thead>
@@ -18,19 +25,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in todos" v-bind:key="item.id">
+        <!-- <tr v-for="item in todos" v-bind:key="item.id"> -->
+        <tr v-for="item in computedTodos" v-bind:key="item.id">
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
           <td class="state">
             <button v-on:click="doChangeState(item)">{{ item.state }}</button>
           </td>
           <td class="button">
-            <!-- altキーを押しながら削除 -->
             <button v-on:click.alt="doRemove(item)">削除</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <p>※削除ボタンはaltキーを押しながらクリックして下さい</p>
 
     <h2>新しい作業の追加</h2>
     <form class="add-form" v-on:submit.prevent="doAdd">
