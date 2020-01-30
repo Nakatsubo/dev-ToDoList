@@ -7,7 +7,7 @@ var todoStorage = {
       localStorage.getItem(STORAGE_KEY) || '[]'
     )
     todos.forEach(function(todo, index) {
-      todo.id = index
+      todo.id = index + 1
     })
     todoStorage.uid = todos.length
     return todos
@@ -36,6 +36,13 @@ const app = new Vue({
       return this.todos.filter(function(element) {
         return this.current < 0 ? true : this.current === element.state
       }, this)
+    },
+    labels: function() {
+      // 配列.reduce(コールバック関数, [初期値]) => 各要素を左から右に処理して単一の値を生成する
+      return this.options.reduce(function(a, b) {
+        // Object.assign(target, ...source) => sourceを参照して、targetに値をコピーまたマージする
+        return Object.assign(a, { [b.value] : b.label })
+      }, {})
     }
   },
   watch: {

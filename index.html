@@ -29,8 +29,10 @@
         <tr v-for="item in computedTodos" v-bind:key="item.id">
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
-          <td class="state">
-            <button v-on:click="doChangeState(item)">{{ item.state }}</button>
+          <!-- <td class="state"> -->
+            <!-- <button v-on:click="doChangeState(item)">{{ item.state }}</button> -->
+          <td class="{done:item.state}">
+            <button v-on:click="doChangeState(item)">{{ labels[item.state] }}</button>
           </td>
           <td class="button">
             <button v-on:click.alt="doRemove(item)">削除</button>
